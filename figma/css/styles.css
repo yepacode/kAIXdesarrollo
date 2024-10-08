@@ -1,0 +1,194 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    text-align: right;
+    padding: 11px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 50rem;
+}
+
+.nav {
+    display: flex;
+    gap: 30px; /* Añadimos espacio entre los enlaces */
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap; 
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-content {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    flex-direction: column;
+    padding-top: 8vh; /* Subimos el texto más cerca del header */
+}
+
+.text-container {
+    max-width: 80%;
+}
+
+.main-title {
+    font-size: 10vw; /* Tamaño grande para coincidir con la imagen */
+    font-weight: 600;
+    line-height: 1; /* Evitamos demasiada separación entre líneas */
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.main-subtitle {
+    font-size: 2.5vw; /* Subtítulo ajustado */
+    margin-top: 15px; /* Espaciado entre el título y subtítulo */
+    font-weight: 400;
+}
+
+/* Botón de scroll */
+
+/* Botón de scroll */
+.scroll-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: transparent; /* Fondo transparente inicialmente */
+    border-radius: 50%; /* Círculo perfecto */
+    position: absolute;
+    
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave para el borde y fondo */
+    border: 2px solid white; /* Borde blanco delgado */
+}
+
+/* Flecha solo con líneas */
+.arrow-down {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg); /* Rotamos para hacer la flecha hacia abajo */
+    transition: border-color 0.3s ease; /* Transición suave del color de la flecha */
+}
+
+/* Efecto hover */
+.scroll-button:hover {
+    background-color: #00ff00; /* Fondo completamente verde al hacer hover */
+    border-color: #00ff00; /* Borde también verde al hacer hover */
+}
+
+.scroll-button:hover .arrow-down {
+    border-color: white; /* Flecha vuelve a ser blanca al hacer hover */
+}
+
+
+
+
+
+
+
+
+/* AJUSTE PARA PANTALLAS */
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 12vw;
+        line-height: 1.1; /* Un poco más de separación en pantallas pequeñas */
+    }
+
+    .main-subtitle {
+        font-size: 4vw;
+        margin-top: 10px;
+    }
+}
+
+/* Ajustes del logo para diferentes pantallas */
+
+/* Pantallas menores de 1500px */
+@media (max-width: 1500px) {
+    .logo {
+        margin-right: 40rem;
+    }
+}
+
+/* Pantallas menores de 1200px */
+@media (max-width: 1200px) {
+    .logo {
+        margin-right: 30rem;
+    }
+}
+
+/* Pantallas menores de 1000px */
+@media (max-width: 1000px) {
+    .logo {
+        margin-right: 20rem;
+    }
+}
+
+/* Pantallas menores de 768px (tamaño de tabletas y móviles) */
+@media (max-width: 768px) {
+    .logo {
+        margin-right: 10rem;
+    }
+}
+
+/* Pantallas menores de 480px (dispositivos móviles más pequeños) */
+@media (max-width: 480px) {
+    .logo {
+        margin-right: 5rem;
+    }
+}

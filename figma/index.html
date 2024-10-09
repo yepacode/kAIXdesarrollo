@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/script.js"></script>
+
 </head>
 
 <body>
@@ -16,8 +17,9 @@
         <nav class="nav">
             <img src="medios/Union.png" alt="Kaix Ventures Logo" class="logo">
             <a href="#">What We Do</a>
-            <a href="#">Products</a>
-            <a href="#">Team</a>
+            <a href="#">FundX</a>
+            <a href="#">PrivateX</a>
+            <a href="#">Xrai</a>
             <a href="#">Investor Center</a>
             <a href="#">Contact</a>
         </nav>
@@ -36,11 +38,64 @@
             <p class="main-subtitle">Anytime / Anywhere</p>
         </div>
     </main>
-
-    <div class="scroll-button">
-        <div class="arrow-down"></div> <!-- Flecha con solo líneas -->
+    
+    <div class="what-we-do-container">
+        <h2>What We Do</h2>
+        <div class="scroll-button">
+            <div class="arrow-down"></div>
+        </div>
     </div>
+
+    <section class="what-we-do" id="sectionWWD">
+        <div class="content">
+            <h2>What We Do</h2>
+            <h1>Cutting-edge platform for investing</h1>
+            <p>in top private equity initiatives and financial markets strategies.</p>
+            <p class="subtext">We provide you with the same investment opportunities as top investors, in an easy and accessible way. Our goal is to create a trusted space where everyone can experience how the big players invest. Investment opportunities shouldn't be limited to just a few.</p>
+            <!-- <button class="invest-btn">Quiero invertir</button> -->
+        </div>
+    
+        <div class="phone">
+            <img src="medios/phone1.png" alt="Phone 1">
+        </div>
+    </section>
+
     
 </body>
+<script>
+    document.querySelector('.scroll-button').addEventListener('click', function() {
+        const nextSection = document.getElementById('sectionWWD');
+        const startPosition = window.pageYOffset;
+        const targetPosition = nextSection.offsetTop;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
 
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, 1000);
+            window.scrollTo(0, run);
+            if (timeElapsed < 1000) {
+                requestAnimationFrame(animation);
+            } else {
+                // Pequeño rebote al final
+                setTimeout(() => {
+                    window.scrollTo(0, targetPosition - 10);
+                    setTimeout(() => {
+                        window.scrollTo(0, targetPosition);
+                    }, 50);
+                }, 50);
+            }
+        }
+
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    });
+</script>
 </html>

@@ -9,12 +9,16 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #000;
     color: white;
-    height: 100vh;
+    height: 85vh;
     overflow: hidden;
+    padding-top: 80px
 }
 
 .header {
+    position: fixed; /* Fijar el menú en la parte superior de la página */
+    top: 0; /* Posicionarlo en la parte superior */
     width: 100%;
+    z-index: 1000; /* Asegurar que esté por encima del contenido */
     text-align: right;
     padding: 11px;
     justify-content: space-between;
@@ -82,7 +86,7 @@ body {
 }
 
 .main-title {
-    font-size: 10vw; /* Tamaño grande para coincidir con la imagen */
+    font-size: 8vw; /* Tamaño grande para coincidir con la imagen */
     font-weight: 600;
     line-height: 1; /* Evitamos demasiada separación entre líneas */
     letter-spacing: 0.02em;
@@ -93,6 +97,30 @@ body {
     font-size: 2.5vw; /* Subtítulo ajustado */
     margin-top: 15px; /* Espaciado entre el título y subtítulo */
     font-weight: 400;
+}
+
+.what-we-do-container {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.what-we-do-container h2 {
+    font-size: 0.5em;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
 }
 
 /* Botón de scroll */
@@ -112,12 +140,14 @@ body {
     transform: translateX(-50%);
     transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave para el borde y fondo */
     border: 2px solid white; /* Borde blanco delgado */
+    cursor: pointer;
+    animation: bounce 2s infinite; /* Animación de rebote */
 }
 
 /* Flecha solo con líneas */
 .arrow-down {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
     transform: rotate(45deg); /* Rotamos para hacer la flecha hacia abajo */
@@ -126,13 +156,14 @@ body {
 
 /* Efecto hover */
 .scroll-button:hover {
-    background-color: #00ff00; /* Fondo completamente verde al hacer hover */
-    border-color: #00ff00; /* Borde también verde al hacer hover */
+    background-color: #00de83; /* Fondo completamente verde al hacer hover */
+    border-color: #00de83; /* Borde también verde al hacer hover */
 }
 
 .scroll-button:hover .arrow-down {
     border-color: white; /* Flecha vuelve a ser blanca al hacer hover */
 }
+
 
 
 
@@ -192,3 +223,89 @@ body {
         margin-right: 5rem;
     }
 }
+
+/* Seccion What We Do*/
+
+#sectionWWD {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+}
+
+.what-we-do {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+
+.content {
+    max-width: 50%;
+}
+
+.content h2 {
+    color: #00de83;
+    font-size: 0.5em;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.content h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 0.8em;
+    margin-bottom: 15px;
+}
+
+.content .subtext {
+    font-size: 0.75em;
+    color: #ffffff;
+    
+}
+
+.content .subtext span {
+    font-weight: 400;
+    color: #00de83;
+}
+
+.invest-btn {
+    background-color: #818180;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 0.5em;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.invest-btn:hover {
+    font-weight: bold;
+    background-color: #00de83; /* Color más oscuro al hacer hover */
+}
+
+.phone {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos para la primera imagen */
+.phone img:nth-child(1) {
+    margin-right: -100px;
+    width: 600px;
+    border-radius: 20px;
+}
+
+
+
